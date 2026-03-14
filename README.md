@@ -1,110 +1,55 @@
-# VALORANT Config Copier
+# VALORANT-Config-Copier-Plus
 
-A simple yet powerful command-line tool for easily copying VALORANT settings (crosshair, keybinds, graphics, etc.) from one account to another on the same computer. The script uses the [HenrikDev API](https://docs.henrikdev.xyz/) to fetch player names, making it easy to identify which profile belongs to which account.
+A powerful command-line tool for easily copying VALORANT settings (crosshair, keybinds, graphics, etc.) from one account to another on the same computer. This version includes an advanced selector system and player name fetching via the HenrikDev API.
 
-## Demo
+**Modified and Enhanced by XASAC**
 
-Here's what using the tool looks like:
-
-```bash
-$ node app.js
---- VALORANT Config Copier ---
-HenrikDev API key found in your .env file.
-Fetching player names using HenrikDev API...
-? Select the SOURCE profile (copy settings FROM): (Use arrow keys)
-❯ PlayerOne#EUW
-  SmurfAccount#NA1
-  FriendOnMyPC#EUW
-? Select the DESTINATION profile (copy settings TO): (Use arrow keys)
-  SmurfAccount#NA1
-❯ FriendOnMyPC#EUW
-? Are you sure you want to OVERWRITE the settings in SmurfAccount#NA1 with the settings from PlayerOne#EUW? This action cannot be undone. (y/N) y
-Copying settings from PlayerOne#EUW to SmurfAccount#NA1...
-✅ Success! Configs copied successfully.
-```
+---
 
 ## Features
 
-- **Automatic profile detection:** Automatically finds all VALORANT user profiles in the default Windows installation path
-- **Player name fetching:** Retrieves Riot ID (e.g., `PlayerName#TAG`) for each profile, so you know exactly which account you're working with
-- **Interactive interface:** Clean, step-by-step menu guides you through the entire process
-- **Safety confirmation:** Requires final confirmation before overwriting any files to prevent accidents
-- **Secure API key storage:** Uses `.env` file to keep your API key secret and out of the script code
+- **Advanced Copier (app_plus.js):** Select specific setting categories to copy:
+  - Crosshair Settings
+  - Video & Graphic Settings
+  - Audio Settings
+  - Gameplay Settings (Mouse, Minimap etc.)
+- **Player Name Fetching:** Automatically identifies accounts by their Riot ID (Name#Tag) using the [HenrikDev API](https://docs.henrikdev.xyz/).
+- **Emoji-Free Interface:** Professional and clean ASCII-based command-line interface.
+- **Multilingual Support:** Includes the global English version.
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) (version 16.x or newer recommended)
-- Windows operating system (script relies on the default `%localappdata%` path)
+- [Node.js](https://nodejs.org/) (version 16.x or newer)
+- Windows OS (default path: `%localappdata%\VALORANT\Saved\Config`)
+- **HenrikDev API Key:** Required for fetching player names.
 
-## Installation & Setup
+## Quick Start (For Beginners)
 
-Follow these steps to get the tool up and running.
+1. Download the latest release ZIP and extract it.
+2. Double-click **run.bat**. 
+3. It will automatically check for Node.js and install missing dependencies.
+4. Follow the on-screen instructions to set up your API key.
 
-### Step 1: Download the code
+## Installation (Manual)
 
-Clone this repository or download the source code as a ZIP file and extract it.
+## Usage
 
+Run the main script:
 ```bash
-git clone <your-repository-url>
-cd <project-folder-name>
+node app_plus.js
 ```
 
-### Step 2: Install dependencies
-
-Open a terminal (such as Command Prompt, PowerShell, or Windows Terminal) in the project folder and run:
-
+Or use the base version:
 ```bash
-npm install
+node app.js
 ```
 
-This command will install all necessary packages (inquirer, axios, colors, dotenv).
+## Credits
 
-### Step 3: Get a HenrikDev API key
+- Original tool by [mkornela](https://github.com/mkornela/VALORANT-Config-Copier).
+- Enhanced and modified by **XASAC**.
 
-The script needs an API key to fetch player names.
+---
 
-1. Go to the [HenrikDev website](https://docs.henrikdev.xyz/authentication-and-authorization)
-2. Follow the steps on the site
-3. You should get your API key on their Discord. It will look similar to `HDEV-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`
-4. Copy this key and put it in .env file. Keep it secret and don't share it with anyone!
-
-### Step 4: Configure your API key
-
-1. In the project folder, find the file named `.env.example`
-2. Create a copy of this file and rename the copy to `.env`
-3. Open the new `.env` file with a text editor
-4. Replace the example key with your real API key copied from the HenrikDev website
-
-**Before (in .env.example file):**
-```env
-HENRIK_API_KEY=HDEV-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-```
-
-**After (in your new .env file):**
-```env
-HENRIK_API_KEY=HDEV-123ab45c-d67e-8f90-1234-56789abcdefg
-```
-
-## How to Use
-
-Once setup is complete, running the tool is simple:
-
-1. Open a terminal in the project folder
-2. Run the script with the following command:
-   ```bash
-   node app.js
-   ```
-3. Follow the on-screen instructions to select your source and destination accounts
-
-That's it! Your settings will be copied instantly.
-
-## Config File Location
-
-VALORANT configuration files are stored at:
-```
-C:\Users\YOUR_USERNAME\AppData\Local\VALORANT\Saved\Config
-```
-
-## Disclaimer
-
-This is an unofficial third-party tool and is not affiliated with Riot Games. Use at your own risk. It's always good practice to manually backup your config folders before first using this tool.
+*Disclaimer: This tool is not affiliated with Riot Games. Use at your own risk.*
+ Riverside
